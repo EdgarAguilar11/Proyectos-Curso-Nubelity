@@ -1,0 +1,22 @@
+server:
+  port: 5553
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:7777/eureka
+spring:
+  application:
+    name: Micro-service-divide
+  
+  
+#este archivo va de la mano con bootstrap.properties 
+#ya que en el se define el nombre del microservicio
+  
+#en versiones anteriores el nombre se colocaba en un archivo de nombre
+#bootstrap.properties
+
+  
+  
+#server.port = 5553
+#eureka.client.serviceUrl.defaultZone = http://localhost:7777/eureka
+#spring.application.name = Micro-service-divide

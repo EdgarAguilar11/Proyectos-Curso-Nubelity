@@ -1,0 +1,9 @@
+server:
+  port: 5551
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:7777/eureka
+spring:
+  application:
+    name: Micro-service-suma

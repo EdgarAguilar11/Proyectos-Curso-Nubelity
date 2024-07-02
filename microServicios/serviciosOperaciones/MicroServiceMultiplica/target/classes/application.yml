@@ -1,0 +1,9 @@
+server:
+  port: 5552
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:7777/eureka
+spring:
+  application:
+    name: Micro-service-multiplica
