@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<!-- <meta charset="utf-8"> -->
+<meta charset="ISO-8859-1">
+<title>Usuarios</title>
+</head>
+<body>
+	<h2>Lista de usuarios</h2>
+	<h3><a th:href="@{/registro}">Nuevo usuario</a></h3>
+	<table>
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Nombre</th>
+				<th>Email</th>
+				<th>Género</th>
+				<th>Fecha de Nacimiento</th>
+				<th>Casado</th>
+				<th>Profesión</th>
+				<th>Nota</th>
+				<th>Opciones</th>
+			</tr>		
+		</thead>
+		<tbody>
+			<tr th:each = "usuario : ${usuarios}">
+				<td th:text="${usuario.usuarioId}"></td>
+				<td th:text="${usuario.nombre}"></td>
+				<td th:text="${usuario.email}"></td>
+				<td th:text="${usuario.genero}"></td>
+				<td th:text="${usuario.fechaNacimiento}"></td>
+				<td th:text="${usuario.casado}"></td>
+				<td th:text="${usuario.profesion}"></td>
+				<td th:text="${usuario.nota}"></td>
+				<td>
+					<a th:href="@{/actualizar/{id} (id=${usuario.usuarioId})}">Actualizar</a>
+					<a th:href="@{/borrar/{id} (id=${usuario.usuarioId})}">Borrar</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
