@@ -1,0 +1,44 @@
+#cada dos espacios es una jerarquía menor de la declaración anterior
+#los tres guiones(---) son el separador de perfiles
+server:
+  port: 8081
+
+spring:
+  profiles:
+    active: mysql-profile
+
+--- 
+spring:
+  config:
+    activate:
+      on-profile: h2-profile
+  datasource:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:h2db
+    username: sa
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
+
+welcome:
+  message: Bienvenido(a) a Spring Boot Rest
+  
+---
+spring:
+  config:
+    activate:
+      on-profile: mysql-profile
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/javadb
+    username: root
+    password: inefable12
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+welcome:
+  message: Bienvenido(a) a Spring Boot Rest
