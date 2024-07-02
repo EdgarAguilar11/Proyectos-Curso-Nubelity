@@ -1,0 +1,9 @@
+server:
+  port: 7777
+eureka:
+  instance:
+    hostname: localhost
+#  el servidor no se registra a si mismo por lo que se desactiva
+  client:
+    registerWithEureka: false
+    fetchRegistry: false

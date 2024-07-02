@@ -1,0 +1,25 @@
+server:
+  port: 9002
+
+spring:
+  application:
+    name: EMPLEADO-SERVICE
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:mydb
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://localhost:7777/eureka
+    instance:
+      hostname: localhost
